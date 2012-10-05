@@ -210,6 +210,7 @@
                                     //reload the gridview
                                     $("#mkorotDataGrid").load(location.href+" #mkorotDataGrid>*", "");return false;
                                         });
+                                        //focus back to the first input
                                         $("#MkorotGauge_gauge_id").focus();
                                 }
                                 else {
@@ -218,7 +219,7 @@
                             }'
                     ),
                     //htmlOptions
-                    array('class'=>'rounded-corners')); ?>
+                    array('class'=>'ui-widget')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

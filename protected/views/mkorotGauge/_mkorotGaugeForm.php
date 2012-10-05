@@ -26,7 +26,8 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
 
 <?php //$dataProvider=new CActiveDataProvider('MkorotGauge');
 
-            $this->widget('zii.widgets.grid.CGridView', array(
+            //$this->widget('zii.widgets.grid.CGridView', array(
+            $this->widget('ext.NGridView.NGridView', array(
             'dataProvider'=>$dataProvider,
             'id'=>'mkorotDataGrid',
                 //lets tell the pager to use our own css file

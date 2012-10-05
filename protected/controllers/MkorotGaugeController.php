@@ -32,7 +32,7 @@ class MkorotGaugeController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','getGaugeOptionsAjax','getAreaOptionsAjax','getGaugeAreaIdOptionsAjax','getMonthNamesAjax','getPeriodNamesAjax'),
+				'actions'=>array('delete','create','update','getGaugeOptionsAjax','getAreaOptionsAjax','getGaugeAreaIdOptionsAjax','getMonthNamesAjax','getPeriodNamesAjax'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
