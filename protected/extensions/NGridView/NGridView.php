@@ -540,8 +540,9 @@ class NGridView extends CBaseListView
 			$class=$this->rowCssClass[$row%$n];
 		else
 			$class='';
+			//add primary key to the row
                 $dataArray = $this->dataProvider->getData();
-		echo empty($class) ? '<tr>' : '<tr class="'.$class.'"'.'id='.$dataArray->id.'>';
+		echo empty($class) ? '<tr>' : '<tr class="'.$class.'"'.'primaryKey='.$dataArray[$row]->id.'>';
 		foreach($this->columns as $column)
 			$column->renderDataCell($row);
 		echo "</tr>\n";

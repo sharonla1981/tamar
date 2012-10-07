@@ -246,11 +246,23 @@
            }
        
 
-    })
+    });
     
     //if the gauge_id input is deleted, the area_id and name will be deleted
     $("#MkorotGauge_gauge_id").change(function() {
             $("#MkorotGauge_area_id").val('');
             $("#areaName").val('');
     });
+    
+	//NGridView extension
+    //add a click event to the grid view cell
+    /*$(document).on('click', 'td', function(){
+    	//alert($(this).parent().attr('primaryKey'));
+    	$(this).html("<form><div id='text1'><input type='text' name='textbox1'></div></form>");
+    	
+    });*/
+
+				
+	
+    
 </script>

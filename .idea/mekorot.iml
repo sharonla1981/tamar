@@ -10,6 +10,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../ZendServer/share/ZendFramework/library" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../ZendServer/share/ZendFramework/library" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 

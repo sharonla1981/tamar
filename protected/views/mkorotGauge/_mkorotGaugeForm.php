@@ -24,10 +24,10 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
 ?>
 
 
-<?php //$dataProvider=new CActiveDataProvider('MkorotGauge');
+<?php 
 
-            //$this->widget('zii.widgets.grid.CGridView', array(
-            $this->widget('ext.NGridView.NGridView', array(
+            $this->widget('zii.widgets.grid.CGridView', array(
+            //$this->widget('ext.NGridView.NGridView', array(
             'dataProvider'=>$dataProvider,
             'id'=>'mkorotDataGrid',
                 //lets tell the pager to use our own css file
@@ -43,34 +43,12 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
                     'period',
                     'amount',
                     'areas.areaName',
-                   /*array(
-                        'name'=>'חיבור',
-                        'value'=>'$data["gauge_id"]',
-                    ),
-                    array(
-                        'name'=>'שנה',
-                        'value'=>'$data["years"]',
-                    ),
-                    array(
-                        'name'=>'חודש',
-                        'value'=>'$data["months"]',
-                    ),
-                    array(
-                        'name'=>'תקופה',
-                        'value'=>'$data["period"]',
-                    ),
-                    array(
-                        'name'=>'כמות',
-                        'value'=>'$data["amount"]',
-                    ),
-                    array(
-                        'name'=>'איזור',
-                        'value'=>'$data["areaName"]',
-                    ),*/
-                    array(            // display a column with "view", "update" and "delete" buttons
+                     array(            // display a column with "view", "update" and "delete" buttons
                         'class'=>'CButtonColumn',
                      ),
                  )
             ));
 
 ?>
+
+            

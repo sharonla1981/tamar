@@ -78,7 +78,8 @@ class MkorotGaugeController extends Controller
             }
 
 		}
-
+		
+		
         echo $result;
 
 	}

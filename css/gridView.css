@@ -44,6 +44,17 @@ li.page, li.next, li.previous {margin:0}
 	text-decoration: none;
 }
 
+.grid-view table.items td input
+{
+ background-color: white;
+ border-color: white;
+ border-style: none;
+ border-width: 0px;
+ height: 100%;
+ width: 100%;
+}
+
+
 .grid-view table.items th a:hover
 {
 	/*color: #fff;*/
