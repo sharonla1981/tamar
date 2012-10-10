@@ -9178,3 +9178,43 @@ REQUEST_URI=/tamar/index.php?r=MkorotGauge/index
 in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\NGridView\NGridView.php (544)
 in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\NGridView\NGridView.php (517)
 in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\NGridView\NGridView.php (427)
+2012/10/09 01:10:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:10:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:15:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:15:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:15:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:15:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:16:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:16:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:16:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:16:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:16:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 01:16:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
+2012/10/09 09:31:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1356 View 'inflowdb.areas' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them. The SQL statement executed was: SHOW COLUMNS FROM `areas`.
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)
