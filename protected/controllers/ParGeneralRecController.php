@@ -6,7 +6,7 @@ class ParGeneralRecController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/righty';
 
 	/**
 	 * @return array action filters
@@ -169,8 +169,57 @@ class ParGeneralRecController extends Controller
 		}
 	}
 	
+	/**
+	 * used for _pane2 view that contain the existing params in the table
+	 * by select distinct the param_heb_name attribute
+	 * @return ParGeneralRec Model
+	 */
+	public function paramScreenPanel()
+	{
+		$model = ParGeneralRec::model()->findAll(array('select'=>'t.param_heb_name,t.param_name','group'=>'t.param_name','distinct'=>true,'condition'=>'NOT ISNULL(t.sub_param_name)'));
+
+		return $model;
+	}
+	
+	/**
+	 * create the data provider based on a SQL statement which returns the selected param with it's sub param value and title.
+	 * finnaly render the paramScreen view with the data provider.
+	 */
 	public function actionParamScreen()
 	{
+		$paramName = $_GET['param_name'];
+		
+		$count=Yii::app()->db->createCommand("SELECT COUNT(*) FROM par_general_rec a,par_general_rec b
+				WHERE (ISNULL(a.end_date) OR a.end_date >= CURDATE())
+			 		AND a.sub_param_id = b.param_id
+			 		AND a.param_name ="."'$paramName'")->queryScalar();
+		$sql="SELECT a.id AS 'id',a.param_heb_name AS 'paramName',a.sub_param_id AS 'subId',a.param_value AS 'value',b.param_value AS 'subValue',
+			 b.param_heb_name AS 'subParamName'
+				FROM par_general_rec a,par_general_rec b
+				WHERE (ISNULL(a.end_date) OR a.end_date >= CURDATE())
+			 		AND a.sub_param_id = b.param_id
+			 		AND a.param_name ="."'$paramName'";
+		
+		$dataProvider=new CSqlDataProvider($sql, array(
+				'keyField'=>'id',
+				'totalItemCount'=>$count,
+				'pagination'=>array(
+						'pageSize'=>10,
+				),
+		));
+		
+		//the user must be logged on to enter the paramScreen, if no user is logged on, they will be redirected to the login screen.
+		if (!Yii::app()->user->isGuest)
+		{
+			$this->render('paramScreen',array(
+					'dataProvider'=>$dataProvider,
+			));
+		}
+		else
+		{
+			$this->redirect('index.php?r=site/login');
+		}
 		
 	}
+	
 }
