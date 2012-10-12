@@ -10221,3 +10221,19 @@ Stack trace:
 #26 {main}
 REQUEST_URI=/tamar/index.php?r=parGeneralRec/index
 ---
+2012/10/12 13:38:30 [error] [php] Undefined variable: dataProvider (D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\ParGeneralRecController.php:205)
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): ParGeneralRecController->runAction()
+#1 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): ParGeneralRecController->filterAccessControl()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): ParGeneralRecController->runActionWithFilters()
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): ParGeneralRecController->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CWebApplication->run()
+REQUEST_URI=/tamar/index.php?r=parGeneralRec/paramScreen&param_name=area_gauge
+in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\ParGeneralRecController.php (205)
+in D:\Program Files\Zend\Apache2\htdocs\tamar\index.php (13)

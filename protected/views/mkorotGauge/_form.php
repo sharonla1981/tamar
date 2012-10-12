@@ -13,6 +13,9 @@
 
 
 <p class="note">השדות המסומנים ב <span class="required">*</span> הינם שדות חובה.</p>
+<div class="container">
+	<div class="messagebox" id="messageBox"></div>
+</div>
 
 	<?php echo $form->errorSummary($model); ?>
 	<div class="rows">
@@ -212,6 +215,7 @@
                                         });
                                         //focus back to the first input
                                         $("#MkorotGauge_gauge_id").focus();
+                    					$("#messageBox").removeClass().addClass("confirmbox").html("הנתונים נוספו בהצלחה").fadeIn(2000).fadeOut(4000);
                                 }
                                 else {
                                     //return false;
@@ -253,6 +257,9 @@
             $("#MkorotGauge_area_id").val('');
             $("#areaName").val('');
     });
+
+
+    
     
 	//NGridView extension
     //add a click event to the grid view cell

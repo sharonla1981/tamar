@@ -19,6 +19,10 @@
 			{
 				$panelsArray['עדכון נתונים'] = $this->renderPartial('_pane2',null,true);
 			}
+			else 
+			{
+				$panelsArray['עדכון נתונים'] = CHtml::link('פעולות נוספות','index.php?r=parGeneralRec/index');
+			}
 			
 	?>
 	<?php	$this->widget('zii.widgets.jui.CJuiAccordion', array(
@@ -53,6 +57,9 @@
 $("#rightPanel").accordion({
     'fillSpace': true,
     //'clearStyle': true
+	//'heightStyle': "content"
+    collapsible: true,
+    
 });
 
 </script>
