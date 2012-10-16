@@ -13,9 +13,9 @@
 
 
 <p class="note">השדות המסומנים ב <span class="required">*</span> הינם שדות חובה.</p>
-<div class="container">
-	<div class="messagebox" id="messageBox"></div>
-</div>
+
+<div class="messagebox" id="messageBox"></div>
+
 
 	<?php echo $form->errorSummary($model); ?>
 	<div class="rows">

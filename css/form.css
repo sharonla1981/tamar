@@ -194,8 +194,8 @@ input.rounded:focus {
 }
 
 /* message box */
-.container {width: 670px; margin: 10px auto;}
-.messagebox {background-color: #F5F5F5;padding:5px;margin:10px 0px;border: 1px solid #DBDBDB;}
-.errorbox {color:#000;background-color:#ffeded;padding:5px;margin:10px 0px;border:1px solid #f27c7c;}
-.confirmbox {background-color:#F2FFDB;color:#151515;border:1px solid #9C6;margin:10px 0px;padding:5px;}
+/*.messageContainer {width: 670px; margin: 10px auto;visibility: hidden;}*/
+.messagebox {background-color: #F5F5F5;margin:10px 0px;border: 1px solid #DBDBDB;width: 670px; margin: 10px auto;visibility: hidden;}
+.errorbox {color:#000;background-color:#ffeded;margin:10px 0px;border:1px solid #f27c7c;visibility: visible;}
+.confirmbox {background-color:#F2FFDB;color:#151515;border:1px solid #9C6;margin:10px 0px;visibility: visible;}
 
