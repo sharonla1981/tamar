@@ -9,7 +9,7 @@
  */
 
 Yii::import('zii.widgets.CBaseListView');
-Yii::import('zii.widgets.grid.CDataColumn');
+Yii::import('ext.NGridView.NDataColumn');
 Yii::import('zii.widgets.grid.CLinkColumn');
 Yii::import('zii.widgets.grid.CButtonColumn');
 Yii::import('zii.widgets.grid.CCheckBoxColumn');
@@ -332,7 +332,7 @@ class NGridView extends CBaseListView
 			else
 			{
 				if(!isset($column['class']))
-					$column['class']='CDataColumn';
+					$column['class']='NDataColumn';
 				$column=Yii::createComponent($column, $this);
 			}
 			if(!$column->visible)
@@ -350,15 +350,15 @@ class NGridView extends CBaseListView
 	}
 
 	/**
-	 * Creates a {@link CDataColumn} based on a shortcut column specification string.
+	 * Creates a {@link NDataColumn} based on a shortcut column specification string.
 	 * @param string $text the column specification string
-	 * @return CDataColumn the column instance
+	 * @return NDataColumn the column instance
 	 */
 	protected function createDataColumn($text)
 	{
 		if(!preg_match('/^([\w\.]+)(:(\w*))?(:(.*))?$/',$text,$matches))
 			throw new CException(Yii::t('zii','The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.'));
-		$column=new CDataColumn($this);
+		$column=new NDataColumn($this);
 		$column->name=$matches[1];
 		if(isset($matches[3]) && $matches[3]!=='')
 			$column->type=$matches[3];

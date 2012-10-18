@@ -26,8 +26,8 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
 
 <?php 
 
-            $this->widget('zii.widgets.grid.CGridView', array(
-            //$this->widget('ext.NGridView.NGridView', array(
+            //$this->widget('zii.widgets.grid.CGridView', array(
+            $this->widget('ext.NGridView.NGridView', array(
             'dataProvider'=>$dataProvider,
             'id'=>'mkorotDataGrid',
                 //lets tell the pager to use our own css file
@@ -50,5 +50,74 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
             ));
 
 ?>
+
+
+<script type="text/javascript">
+    
+    //global variable that contains the edited field value
+    var editedInputValue;
+    
+    //add an input text box to the div when clicked.
+    $('td div').click(function(){
+        $(this).html('<input type="text" class="editable" onblur="leaveText(this)" onkeyup="inputUpdate(this)" name="edited" size="10'+ '"' + 'value="'+ $(this).text()+ '">' );
+        
+        if ($(this).children().attr('name') == "edited")
+            {
+                $(this).children().focus();
+            }
+        
+    });
+    
+    /**
+     * @input HTMLInputElement
+     * this function triggered when input field is blured.
+     * it sets the table cell to the input data was enterded by the user.
+     * it call an update function(server-side) that will update the DB
+     */
+    function leaveText(input)
+    {
+        //set data variables that will be used to update the DB
+        var primary = input.parentElement.parentElement.parentElement.getAttribute('primaryKey');
+        var field_name = input.parentElement.getAttribute('id');
+        //var content = input.getAttribute('value');
+        var content = editedInputValue;
+        
+        
+        //remove the text input and set the DIV content to be the input data
+        input.parentElement.innerHTML = content;
+        
+        updateContent(content, primary, field_name);
+        
+    }
+    
+    //update the global inputValue variable to the current value was entered by the user
+    function inputUpdate(input)
+    {
+        editedInputValue = input.value;
+    }
+    
+    /**
+     * @text - was entered by the user
+     * @primary - the row primaryKey value
+     * @fieldName - the field name that was edited
+     */
+    function updateContent(text,primary,fieldName)
+    {
+        $.ajax({
+                url: "index.php?r=mkorotGauge/updateAjax",
+                type: "POST",
+                async: "false",
+                //dataType: "json",
+                data: "text=" + text + "&primary=" + primary + "&fieldName=" + fieldName,
+                success: function(data) {
+                    //alert(data);
+               },
+                error: function(data) {
+                  // alert(data.responseText);
+               }
+         });
+    }
+    
+</script>
 
             

@@ -32,7 +32,8 @@ class MkorotGaugeController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('delete','create','update','getGaugeOptionsAjax','getAreaOptionsAjax','getGaugeAreaIdOptionsAjax','getMonthNamesAjax','getPeriodNamesAjax'),
+				'actions'=>array('delete','create','update','getGaugeOptionsAjax','getAreaOptionsAjax','getGaugeAreaIdOptionsAjax','getMonthNamesAjax',
+						'getPeriodNamesAjax','getGaugesAjax','areaGaugeView','getMkorotGaugeCols','updateAjax'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -107,6 +108,25 @@ class MkorotGaugeController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionUpdateAjax()
+        {
+            if(Yii::app()->request->isAjaxRequest && isset($_POST['primary']))
+            {
+                $primary = $_POST['primary'];
+                $fieldName = $_POST['fieldName'];
+                $text = $_POST['text'];
+                
+                $model=$this->loadModel($primary);
+                
+                $model->setAttribute($fieldName,$text);
+                
+                if ($model->save())
+                {
+                    echo 'update';
+                }
+            }
+        }
 
 	/**
 	 * Deletes a particular model.
@@ -170,6 +190,11 @@ class MkorotGaugeController extends Controller
 
 
 
+	}
+	
+	public function actionAreaGaugeView()
+	{
+		$this->render('areaGAugeView');
 	}
 
     public function actionGetPeriodNamesAjax()
@@ -281,45 +306,77 @@ class MkorotGaugeController extends Controller
 
         }
     }
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new MkorotGauge('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['MkorotGauge']))
-			$model->attributes=$_GET['MkorotGauge'];
+    
+    public function actionGetGaugesAjax()
+    {
+    	if(Yii::app()->request->isAjaxRequest)
+    	{
+    		$dataProvider=new CActiveDataProvider('MkorotGauge');
+    		
+    		echo CJSON::encode($dataProvider->getData());
+    	}
+    }
+    
+    public function actionGetMkorotGaugeCols()
+    {
+        $model = new MkorotGauge;
+        
+        $labels = $model->attributeLabels();
+        
+        $labelsArr = array();
+        
+        foreach ($labels as $labelName => $label)
+        {
+            $labelsArr[] = array(
+                'name'=> $label,
+                'mapping' => $labelName,
+                
+                
+            );
+        }
+        
+        echo CJSON::encode($labelsArr);
+    }
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
+    /**
+     * Manages all models.
+     */
+    public function actionAdmin()
+    {
+            $model=new MkorotGauge('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['MkorotGauge']))
+                    $model->attributes=$_GET['MkorotGauge'];
 
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
-	 */
-	public function loadModel($id)
-	{
-		$model=MkorotGauge::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
+            $this->render('admin',array(
+                    'model'=>$model,
+            ));
+    }
 
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='mkorot-gauge-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
+    /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer the ID of the model to be loaded
+     */
+    public function loadModel($id)
+    {
+            $model=MkorotGauge::model()->findByPk($id);
+            if($model===null)
+                    throw new CHttpException(404,'The requested page does not exist.');
+            return $model;
+    }
+
+    /**
+     * Performs the AJAX validation.
+     * @param CModel the model to be validated
+     */
+    protected function performAjaxValidation($model)
+    {
+            if(isset($_POST['ajax']) && $_POST['ajax']==='mkorot-gauge-form')
+            {
+                    echo CActiveForm::validate($model);
+                    Yii::app()->end();
+            }
+    }
 
 }

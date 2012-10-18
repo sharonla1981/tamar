@@ -224,3 +224,7 @@ div.grid-view {
 	-moz-background-origin:padding;
 	padding:5px;
 }
+
+.editable {
+    background:transparent;
+}

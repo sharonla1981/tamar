@@ -32,7 +32,7 @@ class ParGeneralRecController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','paramScreen'),
+				'actions'=>array('create','update','paramScreen','editbleGrid','getParamAjax'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -220,6 +220,31 @@ class ParGeneralRecController extends Controller
 			$this->redirect('index.php?r=site/login');
 		}
 		
+	}
+	
+	public function actionEditbleGrid()
+	{
+		$dataProvider = new CActiveDataProvider('ParGeneralRec');
+		if (!Yii::app()->user->isGuest)
+		{
+			$this->render('editbleGrid',array(
+					'dataProvider'=>$dataProvider,
+			));
+		}
+		else
+		{
+			$this->redirect('index.php?r=site/login');
+		}
+	}
+	
+	public function actionGetParamAjax()
+	{
+		/*if(Yii::app()->request->isAjaxRequest)
+		{*/
+			$dataProvider = new CActiveDataProvider('ParGeneralRec');
+			
+			echo CJSON::encode($dataProvider->getData());
+		//}
 	}
 	
 }
