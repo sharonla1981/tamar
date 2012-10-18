@@ -225,6 +225,7 @@ div.grid-view {
 	padding:5px;
 }
 
-.editable {
-    background:transparent;
+td div input {
+    background: transparent;
+    border: none;
 }

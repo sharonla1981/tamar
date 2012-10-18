@@ -58,8 +58,9 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
     var editedInputValue;
     
     //add an input text box to the div when clicked.
-    $('td div').click(function(){
-        $(this).html('<input type="text" class="editable" onblur="leaveText(this)" onkeyup="inputUpdate(this)" name="edited" size="10'+ '"' + 'value="'+ $(this).text()+ '">' );
+    //use jquery live event, so the event will be attached now and after every ajax call.
+    $('td div').live('click',function(){
+        $(this).html('<input type="text" class="editable" onblur="leaveText(this)" onkeyup="inputUpdate(this)" name="edited" size="10" value="'+ $(this).text()+ '">' );
         
         if ($(this).children().attr('name') == "edited")
             {
@@ -76,6 +77,8 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
      */
     function leaveText(input)
     {
+        //set the global variable value when click event
+        editedInputValue = input.value;
         //set data variables that will be used to update the DB
         var primary = input.parentElement.parentElement.parentElement.getAttribute('primaryKey');
         var field_name = input.parentElement.getAttribute('id');
