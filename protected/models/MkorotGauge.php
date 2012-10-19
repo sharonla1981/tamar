@@ -53,10 +53,11 @@ class MkorotGauge extends CActiveRecord
 			array('years, months, period, area_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'numerical'),
 			array('gauge_id', 'length', 'max'=>20),
+                        array('gauge_id,years,months','ext.CompositeUniqueKeyValidator.CompositeUniqueKeyValidator','message'=>'קיים מידע עבור תקופה זו'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('gauge_id, years, months, period, amount, area_id, id', 'safe', 'on'=>'search'),
-            array('years','in','range'=>$years,'message'=>$yearsMessage),
+                        array('years','in','range'=>$years,'message'=>$yearsMessage),
 		);
 	}
 
@@ -89,7 +90,7 @@ class MkorotGauge extends CActiveRecord
 			'id' => 'ID',
 		);
 	}
-
+        
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

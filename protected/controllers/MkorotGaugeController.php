@@ -111,11 +111,13 @@ class MkorotGaugeController extends Controller
         
         public function actionUpdateAjax()
         {
+            $update = false;
+            
             if(Yii::app()->request->isAjaxRequest && isset($_POST['primary']))
             {
                 $primary = $_POST['primary'];
                 $fieldName = $_POST['fieldName'];
-                $text = $_POST['text'];
+                $text = isset($_POST['text']) ? $_POST['text'] : "";
                 
                 $model=$this->loadModel($primary);
                 
@@ -123,8 +125,10 @@ class MkorotGaugeController extends Controller
                 
                 if ($model->save())
                 {
-                    echo 'update';
+                    $update = true;
                 }
+                
+                echo $update;
             }
         }
 
