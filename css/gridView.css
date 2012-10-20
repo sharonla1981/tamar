@@ -225,7 +225,13 @@ div.grid-view {
 	padding:5px;
 }
 
-td div input {
+.cellInput {
     background: transparent;
     border: none;
+    width: 100%;
+}
+
+td div {
+    background-color: transparent;
+    width:100%;
 }

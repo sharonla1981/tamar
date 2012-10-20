@@ -1194,3 +1194,261 @@ Stack trace:
 REQUEST_URI=/tamar/index.php?r=mkorotGauge/create
 HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
 ---
+2012/10/19 10:13:47 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\db\ar\CActiveRecord.php(795): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(126): CActiveRecord->save()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionUpdateAjax()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('updateAjax')
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/upd...')
+#15 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/updateAjax
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:13:54 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\db\ar\CActiveRecord.php(795): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(126): CActiveRecord->save()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionUpdateAjax()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('updateAjax')
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/upd...')
+#15 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/updateAjax
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:13:54 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\db\ar\CActiveRecord.php(795): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(126): CActiveRecord->save()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionUpdateAjax()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('updateAjax')
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/upd...')
+#15 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/updateAjax
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:17:09 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\db\ar\CActiveRecord.php(795): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(126): CActiveRecord->save()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionUpdateAjax()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('updateAjax')
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/upd...')
+#15 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/updateAjax
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:17:09 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\db\ar\CActiveRecord.php(795): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(126): CActiveRecord->save()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionUpdateAjax()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('updateAjax')
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/upd...')
+#15 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/updateAjax
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:23:12 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id|years|...')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(381): CActiveForm::validate(Object(MkorotGauge))
+#4 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(70): MkorotGaugeController->performAjaxValidation(Object(MkorotGauge))
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionCreate()
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#15 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/cre...')
+#16 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/create
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:23:13 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id|years|...')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(381): CActiveForm::validate(Object(MkorotGauge))
+#4 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(70): MkorotGaugeController->performAjaxValidation(Object(MkorotGauge))
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionCreate()
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#15 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/cre...')
+#16 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/create
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:23:15 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id|years|...')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(381): CActiveForm::validate(Object(MkorotGauge))
+#4 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(70): MkorotGaugeController->performAjaxValidation(Object(MkorotGauge))
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionCreate()
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#15 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/cre...')
+#16 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/create
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:23:18 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id|years|...')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(381): CActiveForm::validate(Object(MkorotGauge))
+#4 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(70): MkorotGaugeController->performAjaxValidation(Object(MkorotGauge))
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionCreate()
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#15 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/cre...')
+#16 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/create
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:23:19 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id|years|...')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\db\ar\CActiveRecord.php(795): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(75): CActiveRecord->save()
+#4 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionCreate()
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('MkorotGauge/cre...')
+#15 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tamar/index.php?r=MkorotGauge/create
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---
+2012/10/19 10:23:19 [error] [exception.CException] exception 'CException' with message 'CUniqueValidator should be used instead' in D:\Program Files\Zend\Apache2\htdocs\tamar\protected\extensions\CompositeUniqueKeyValidator\CompositeUniqueKeyValidator.php:30
+Stack trace:
+#0 D:\Program Files\Zend\Apache2\yii\framework\validators\CValidator.php(214): CompositeUniqueKeyValidator->validateAttribute(Object(MkorotGauge), 'gauge_id|years|...')
+#1 D:\Program Files\Zend\Apache2\yii\framework\base\CModel.php(158): CValidator->validate(Object(MkorotGauge), NULL)
+#2 D:\Program Files\Zend\Apache2\yii\framework\web\widgets\CActiveForm.php(836): CModel->validate(NULL)
+#3 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(381): CActiveForm::validate(Object(MkorotGauge))
+#4 D:\Program Files\Zend\Apache2\htdocs\tamar\protected\controllers\MkorotGaugeController.php(70): MkorotGaugeController->performAjaxValidation(Object(MkorotGauge))
+#5 D:\Program Files\Zend\Apache2\yii\framework\web\actions\CInlineAction.php(50): MkorotGaugeController->actionCreate()
+#6 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Program Files\Zend\Apache2\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 D:\Program Files\Zend\Apache2\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#15 D:\Program Files\Zend\Apache2\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mkorotGauge/cre...')
+#16 D:\Program Files\Zend\Apache2\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\Program Files\Zend\Apache2\htdocs\tamar\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/tamar/index.php?r=mkorotGauge/create
+HTTP_REFERER=http://localhost/tamar/index.php?r=MkorotGauge/index
+---

@@ -60,23 +60,59 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
     //add an input text box to the div when clicked.
     //use jquery live event, so the event will be attached now and after every ajax call.
     $('td div').live('click',function(){
-        if (!($("#mkorotGaugeViewEdit").find('input')))
-            {
-                $(this).html('<input type="text" class="editable" onblur="leaveText(this)" onkeyup="inputUpdate(this)" name="edited" size="10" value="'+ $(this).text()+ '">' );
         
-                if ($(this).children().attr('name') == "edited")
-                {
-                    $(this).children().focus();
-                }
-            }
-        
-        
-        //$('td div input').not('input:first').remove();
-        //$("#mkorotGaugeViewEdit").find('input');
-        
-        
-        
+        $(this).html('<input type="text" name="edited" size="10" value="'+ $(this).text()+ '">' );
+
+        if ($(this).children().attr('name') == "edited")
+        {
+            $(this).children().focus();
+            $(this).children().addClass('cellInput');
+        } 
     
+    });
+    
+    //when enter was pressed
+    $('td div input').live('keypress',function(e){
+        if (e.which == 13)
+            {
+                $(this).blur();
+            }
+    })
+    
+    $('td div input').live('blur',function(e){
+        var primary = $(this).parent().parent().parent().attr('primaryKey');
+        var field_name = $(this).parent().attr('id');
+        var content = $(this).attr('value');
+        var $input = $(this);
+        
+        /**
+        * @text - was entered by the user
+        * @primary - the row primaryKey value
+        * @fieldName - the field name that was edited
+        * 
+        * return - update was successful
+        */
+        $.ajax({
+                url: "index.php?r=mkorotGauge/updateAjax",
+                type: "POST",
+                async: "false",
+                //dataType: "json",
+                data: "text=" + content + "&primary=" + primary + "&fieldName=" + field_name,
+                success: function(data) {
+                    if (data)
+                        {
+        //                    alert($(this)[0]);
+                            //remove the text input and set the DIV content to be the input data
+                            $input.parent().text(content);
+                            $input.remove();
+                            
+                        }  
+               },
+                error: function(data) {
+                  // alert(data.responseText);
+               }
+         });
+        
     });
     
     /**
@@ -86,7 +122,8 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
      * it call an update function(server-side) that will update the DB
      */
     function leaveText(input)
-    {
+    {        
+        
         //set the global variable value when click event
         editedInputValue = input.value;
         //set data variables that will be used to update the DB
@@ -126,7 +163,7 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
     //update the global inputValue variable to the current value was entered by the user
     function inputUpdate(input)
     {
-        editedInputValue = input.value;
+        //editedInputValue = input.value;
     }
     
 </script>

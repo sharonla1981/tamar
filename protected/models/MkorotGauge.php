@@ -53,7 +53,7 @@ class MkorotGauge extends CActiveRecord
 			array('years, months, period, area_id', 'numerical', 'integerOnly'=>true),
 			array('amount', 'numerical'),
 			array('gauge_id', 'length', 'max'=>20),
-                        array('gauge_id,years,months','ext.CompositeUniqueKeyValidator.CompositeUniqueKeyValidator','message'=>'קיים מידע עבור תקופה זו'),
+                        //array('gauge_id,years,months','ext.CompositeUniqueKeyValidator.CompositeUniqueKeyValidator','message'=>'קיים מידע עבור תקופה זו'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('gauge_id, years, months, period, amount, area_id, id', 'safe', 'on'=>'search'),
