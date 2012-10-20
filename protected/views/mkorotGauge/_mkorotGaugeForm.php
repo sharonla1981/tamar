@@ -71,7 +71,7 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
     
     });
     
-    //when enter was pressed
+    //blur when enter was pressed
     $('td div input').live('keypress',function(e){
         if (e.which == 13)
             {
@@ -121,6 +121,7 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
      * it sets the table cell to the input data was enterded by the user.
      * it call an update function(server-side) that will update the DB
      */
+    /*
     function leaveText(input)
     {        
         
@@ -139,7 +140,7 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
         * @fieldName - the field name that was edited
         * 
         * return - update was successful
-        */
+        
         $.ajax({
                 url: "index.php?r=mkorotGauge/updateAjax",
                 type: "POST",
@@ -164,7 +165,7 @@ $this->widget('ext.htmlTableUi.htmlTableUi',array(
     function inputUpdate(input)
     {
         //editedInputValue = input.value;
-    }
+    } */
     
 </script>
 
