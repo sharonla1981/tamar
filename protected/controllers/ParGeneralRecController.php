@@ -187,32 +187,96 @@ class ParGeneralRecController extends Controller
 	 */
 	public function actionParamScreen()
 	{
+                //param name by user choice
 		$paramName = $_GET['param_name'];
 		
-		$count=Yii::app()->db->createCommand("SELECT COUNT(*) FROM par_general_rec a,par_general_rec b
-				WHERE (ISNULL(a.end_date) OR a.end_date >= CURDATE())
-			 		AND a.sub_param_id = b.param_id
-			 		AND a.param_name ="."'$paramName'")->queryScalar();
-		$sql="SELECT a.id AS 'id',a.param_heb_name AS 'paramName',a.sub_param_id AS 'subId',a.param_value AS 'value',b.param_value AS 'subValue',
-			 b.param_heb_name AS 'subParamName'
-				FROM par_general_rec a,par_general_rec b
-				WHERE (ISNULL(a.end_date) OR a.end_date >= CURDATE())
-			 		AND a.sub_param_id = b.param_id
-			 		AND a.param_name ="."'$paramName'";
+                
+                /**
+                 * MAIN Table variables
+                 * @var $mainSql string: main table sql statement with paramaters to be used by the followed sql for Count and DataProvider
+                 * @var $count integer: main table sql Count rows
+                 * @var $dataProviderSql string: the sql statement that is used by the dataProvider
+                 * @var $dataProvider CSqlDataProvider: the dataProvider used by the paramScreen View 
+                 */
+                $dataProviderMainSql = "SELECT %s
+                            FROM par_general_rec AS t1
+                            LEFT JOIN par_general_rec AS t2 ON (t2.param_id = t1.sub_param_id AND t2.param_name = t1.sub_param_name)
+                            LEFT JOIN par_general_rec AS t3 ON (t3.param_id = t2.sub_param_id AND t3.param_name = t2.sub_param_name)
+                            LEFT JOIN par_general_rec AS t4 ON (t4.param_id = t3.sub_param_id AND t4.param_name = t3.sub_param_name)
+                            WHERE (ISNULL(t1.end_date) OR t1.end_date >= CURDATE())
+                            AND (not ISNULL(t1.sub_param_id))
+                            AND t1.param_name ="."'$paramName'";
+                
+                $count=Yii::app()->db->createCommand(sprintf($dataProviderMainSql,"Count(*)"))->queryScalar();
+                
+                $dataProviderSql = sprintf($dataProviderMainSql,"t1.id AS id,t1.param_id AS lev1Id, t1.param_value as lev1Val,t1.param_heb_name AS lev1Title,
+                         t2.param_id as lev2Id, t2.param_value as lev2Val,t2.param_heb_name AS lev2Title,t2.param_name AS lev2Name,
+			 t3.param_id AS lev3Id,t3.param_value AS lev3Val,t3.param_heb_name AS lev3Title,t3.param_name AS lev3Name");
+                
+                /*$sql = "SELECT t1.id AS id,t1.param_id AS lev1Id, t1.param_value as lev1Name,t1.param_heb_name AS lev1Title,
+                         t2.param_id as lev2Id, t2.param_value as lev2Name,t2.param_heb_name AS lev2Title,
+			 t3.param_id AS lev3Id,t3.param_value AS lev3Name,t3.param_heb_name AS lev3Title
+                            FROM par_general_rec AS t1
+                            LEFT JOIN par_general_rec AS t2 ON (t2.param_id = t1.sub_param_id AND t2.param_name = t1.sub_param_name)
+                            LEFT JOIN par_general_rec AS t3 ON (t3.param_id = t2.sub_param_id AND t3.param_name = t2.sub_param_name)
+                            LEFT JOIN par_general_rec AS t4 ON (t4.param_id = t3.sub_param_id AND t4.param_name = t3.sub_param_name)
+                            WHERE (ISNULL(t1.end_date) OR t1.end_date >= CURDATE())
+                            AND (not ISNULL(t1.sub_param_id))
+                            AND t1.param_name ="."'$paramName'";*/
 		
-		$dataProvider=new CSqlDataProvider($sql, array(
+		$dataProvider=new CSqlDataProvider($dataProviderSql, array(
 				'keyField'=>'id',
 				'totalItemCount'=>$count,
 				'pagination'=>array(
 						'pageSize'=>10,
 				),
 		));
+                
+                //get the param level2 and level3 names
+                $data = $dataProvider->getData();
+                $level2Name = $data[0]['lev2Name'];
+                $level3Name = $data[0]['lev3Name'];
+		/***************************************************************************************************************************/
+                
+                /**
+                 * Level Two Table variables
+                 * $level2And3sql string: the sql statment to retrieve the table
+                 * $level2dataProvider CSqlDataProvider: the table of level2's data provider
+                 */
+                
+                
+                
+                /****************************************************************************************************************************/
+                
+                $level2And3sql = "SELECT DISTINCT param_id,param_value,param_heb_name FROM par_general_rec
+                                    WHERE param_name = '%s'";
+                
+                $level2dataProvider=new CSqlDataProvider(sprintf($level2And3sql,$level2Name), array(
+                                    'keyField'=>'param_id',
+				));
+                
+                /***************************************************************************************************************************/
+                
+                /**
+                 * Level Three Table variables
+                 * $level2And3sql string: the sql statment to retrieve the table
+                 * $level3dataProvider CSqlDataProvider: the table of level2's data provider
+                 */
+                
+                $level3dataProvider=new CSqlDataProvider(sprintf($level2And3sql,$level3Name), array(
+                                    'keyField'=>'param_id',
+				));
+                
+                
+                
+                
+                /****************************************************************************************************************************/
 		
 		//the user must be logged on to enter the paramScreen, if no user is logged on, they will be redirected to the login screen.
 		if (!Yii::app()->user->isGuest)
 		{
 			$this->render('paramScreen',array(
-					'dataProvider'=>$dataProvider,
+					'dataProvider'=>$dataProvider,'level2dataProvider'=>$level2dataProvider,'level3dataProvider'=>$level3dataProvider
 			));
 		}
 		else

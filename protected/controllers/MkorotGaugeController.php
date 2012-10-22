@@ -63,7 +63,7 @@ class MkorotGaugeController extends Controller
 	 */
 	public function actionCreate()
 	{
-        $result = false;
+                $result = false;
 		$model=new MkorotGauge;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -73,15 +73,12 @@ class MkorotGaugeController extends Controller
 		{
 			$model->attributes=$_POST['MkorotGauge'];
 			if($model->save()) {
-                $result = true;
-                //$this->redirect(array('index'));
-
-            }
-
+                        $result = true;
+                        }
 		}
 		
 		
-        echo $result;
+                echo $result;
 
 	}
 

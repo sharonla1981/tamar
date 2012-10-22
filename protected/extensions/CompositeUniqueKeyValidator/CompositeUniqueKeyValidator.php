@@ -24,8 +24,9 @@ class CompositeUniqueKeyValidator extends CValidator {
     protected function validateAttribute($object, $attribute) {
         $class = get_class($object);
         Yii::import($class);
-
-        $keyColumns = explode(',', $this->keyColumns);
+        
+        //$keyColumns = explode(',', $this->keyColumns);
+        $keyColumns = $this->attributes;
         if (count($keyColumns) == 1) {
             throw new CException('CUniqueValidator should be used instead');
         }
@@ -40,6 +41,8 @@ class CompositeUniqueKeyValidator extends CValidator {
         }
         unset($column);
         $criteria->limit = 1;
+        
+        $count = CActiveRecord::model($class)->count($criteria);
 
         if (CActiveRecord::model($class)->count($criteria)) {
             $message = Yii::t('yii', $this->errorMessage, array(

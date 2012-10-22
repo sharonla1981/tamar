@@ -8,6 +8,7 @@
         'validateOnSubmit' => true,
         'validateOnChange' => true,
         'validateOnType' => true,
+        'validationDelay' => 50,
         ),
 ));  ?>
 
@@ -16,8 +17,6 @@
 
 <div class="messagebox" id="messageBox"></div>
 
-
-	<?php echo $form->errorSummary($model); ?>
 	<div class="rows">
         <div class="right-col">
 		<?php echo $form->labelEx($model,'gauge_id'); ?>
