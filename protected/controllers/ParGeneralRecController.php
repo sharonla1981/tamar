@@ -209,7 +209,7 @@ class ParGeneralRecController extends Controller
                 
                 $count=Yii::app()->db->createCommand(sprintf($dataProviderMainSql,"Count(*)"))->queryScalar();
                 
-                $dataProviderSql = sprintf($dataProviderMainSql,"t1.id AS id,t1.param_id AS lev1Id, t1.param_value as lev1Val,t1.param_heb_name AS lev1Title,
+                $dataProviderSql = sprintf($dataProviderMainSql,"t1.id AS id,t1.param_id AS lev1Id, t1.param_value as lev1Val,t1.param_heb_name AS lev1Title,t1.param_name AS lev1Name,
                          t2.param_id as lev2Id, t2.param_value as lev2Val,t2.param_heb_name AS lev2Title,t2.param_name AS lev2Name,
 			 t3.param_id AS lev3Id,t3.param_value AS lev3Val,t3.param_heb_name AS lev3Title,t3.param_name AS lev3Name");
                 
@@ -234,8 +234,30 @@ class ParGeneralRecController extends Controller
                 
                 //get the param level2 and level3 names
                 $data = $dataProvider->getData();
+                $level1Name = $data[0]['lev1Name'];
                 $level2Name = $data[0]['lev2Name'];
                 $level3Name = $data[0]['lev3Name'];
+                $levelsSQL = "SELECT DISTINCT param_id,param_value,param_heb_name FROM par_general_rec
+                                    WHERE param_name = '%s'";
+                /***************************************************************************************************************************/
+                
+                /**
+                 * Level One Table variables
+                 * $level2And3sql string: the sql statment to retrieve the table
+                 * $level3dataProvider CSqlDataProvider: the table of level2's data provider
+                 */
+                
+                $level1dataProvider=new CSqlDataProvider(sprintf($levelsSQL,$level1Name), array(
+                                    'keyField'=>'param_id',
+                                    'pagination'=>array(
+						'pageSize'=>100,
+                                    ),
+				));
+                
+                
+                
+                
+                /****************************************************************************************************************************/
 		/***************************************************************************************************************************/
                 
                 /**
@@ -248,10 +270,9 @@ class ParGeneralRecController extends Controller
                 
                 /****************************************************************************************************************************/
                 
-                $level2And3sql = "SELECT DISTINCT param_id,param_value,param_heb_name FROM par_general_rec
-                                    WHERE param_name = '%s'";
                 
-                $level2dataProvider=new CSqlDataProvider(sprintf($level2And3sql,$level2Name), array(
+                
+                $level2dataProvider=new CSqlDataProvider(sprintf($levelsSQL,$level2Name), array(
                                     'keyField'=>'param_id',
 				));
                 
@@ -263,7 +284,7 @@ class ParGeneralRecController extends Controller
                  * $level3dataProvider CSqlDataProvider: the table of level2's data provider
                  */
                 
-                $level3dataProvider=new CSqlDataProvider(sprintf($level2And3sql,$level3Name), array(
+                $level3dataProvider=new CSqlDataProvider(sprintf($levelsSQL,$level3Name), array(
                                     'keyField'=>'param_id',
 				));
                 
@@ -276,7 +297,8 @@ class ParGeneralRecController extends Controller
 		if (!Yii::app()->user->isGuest)
 		{
 			$this->render('paramScreen',array(
-					'dataProvider'=>$dataProvider,'level2dataProvider'=>$level2dataProvider,'level3dataProvider'=>$level3dataProvider
+					'dataProvider'=>$dataProvider,'level1dataProvider'=>$level1dataProvider,'level2dataProvider'=>$level2dataProvider,
+                                        'level3dataProvider'=>$level3dataProvider
 			));
 		}
 		else
